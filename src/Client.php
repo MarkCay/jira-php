@@ -9,6 +9,7 @@ use Jira\Resources\Attachments;
 use Jira\Resources\Customers;
 use Jira\Resources\Groups;
 use Jira\Resources\Issues;
+use Jira\Resources\IssueTypes;
 use Jira\Resources\Requests;
 use Jira\Resources\Users;
 
@@ -37,6 +38,11 @@ class Client
     public function issues(): Issues
     {
         return new Issues(transporter: $this->transporter);
+    }
+
+    public function issueTypes(): IssueTypes
+    {
+        return new IssueTypes(transporter: $this->transporter);
     }
 
     public function requests(): Requests
